@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-800">
-      <Navbar />
+
 
       <section className="bg-gray-50 py-20 text-center">
         <h2 className="text-4xl font-bold mb-4">Elevate Your Business</h2>

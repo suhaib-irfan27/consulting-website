@@ -1,32 +1,17 @@
-const path = require("path");
+// next.config.ts
+import path from 'path';
+import { NextConfig } from 'next';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  webpack: (config) => {
+const nextConfig: NextConfig = {
+  webpack(config) {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      "@app": path.resolve(__dirname, "src/app"),
+      '@lib': path.resolve(__dirname, 'src/lib'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@app': path.resolve(__dirname, 'src/app'),
     };
     return config;
   },
 };
 
-module.exports = nextConfig;
-
-
-
-
-// const path = require("path");
-
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   webpack: (config) => {
-//     config.resolve.alias = {
-//       ...(config.resolve.alias || {}),
-//       "@app": path.resolve(__dirname, "src/app"),
-//     };
-//     return config;
-//   },
-// };
-
-// module.exports = nextConfig;
+export default nextConfig;
